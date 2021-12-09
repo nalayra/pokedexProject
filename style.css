@@ -1,0 +1,116 @@
+div#pokemon-header {
+  position: relative;
+  text-align: center;
+}
+
+body {
+  background-color: black;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 60px;
+  color: orangered;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-gap: 30px;
+}
+
+.container {
+  padding: 60px;
+  margin: auto;
+}
+
+.card-image {
+  height: 250px;
+}
+
+.card-title {
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  color: springgreen;
+}
+
+.card-subtitle {
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  margin-top: 15px;
+  text-transform: capitalize;
+}
+
+.card {
+  list-style: none;
+  padding: 30px;
+  color: black;
+  text-align: center;
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+}
+
+.card:hover {
+  animation: bounce 0.5s linear;
+}
+
+@keyframes bounce {
+  15% {
+    transform: translateY(-40px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(-0px);
+  }
+}
+
+.pokeball-gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  max-block-size: 100px;
+  margin-inline-start: 600px;
+}
+
+/* .pkm-card {
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+
+#pokemon-header input[class="favorites"] {
+  position: relative;
+  float: right;
+  top: -140px;
+  font-size: 28px;
+  padding: 40px 30px;
+}
+
+#pokemon-header input[class="randomize"] {
+  position: relative;
+  float: left;
+  top: -140px;
+  font-size: 28px;
+  padding: 40px 30px;
+}
+
+#pokemon-header input[class="search"] {
+  position: static;
+  top: -35px;
+  width: 550px;
+}

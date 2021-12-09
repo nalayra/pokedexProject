@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&display=swap" rel="stylesheet">
+    <!-- <style>
+        #pokemon-header input[type="text"]::placeholder{text-align: center;}
+    </style> -->
+</head>
+<body>
+    <!-- Form to put main image on + info-->>
+    <div id="main-form">
+        <img class="big-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Insert alt here" />
+        <div class="text-block">
+            <h4>Pokemon Info</h4>
+            <p>Info will go in here</p>
+          </div>
+    </div>
+    <div class="pokeball-gif">
+        <img src="https://media.giphy.com/media/DJM88aCmEeaNG/giphy.gif">
+    </div>
+    <div class= "container">
+        <h1>Pokedex</h1>
+		<ol id= "pokedex"></ol>
+	</div>
+<!-- randomize button -->
+        <div id="pokemon-header"> 
+            <form id="pokemon-events" action="#" method="POST"></form>
+                <input class="randomize" type="submit" value="Randomize">
+                <input class="search" type="text" name="pokemon-search" placeholder="Search Pokemon">
+                <input class="favorites" type="submit" value="Favorites">
+            </form>
+        </div>
+
+        <div class="conteiner" id="container"></div>
+<!-- randomize box information holder -->
+<!-- RESET VIA JAVASCRIPT -->
+        <div id="randomize-list">
+            <ul id="random"></ul>
+        </div>
+<!-- favorites box information holder -->
+<!-- populate list, RESET VIA JAVASCRIPT -->
+        <div id="favorites-box">
+            <ul id="favorite"></ul>
+        </div>
+</body>
+</html>
