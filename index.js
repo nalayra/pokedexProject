@@ -58,55 +58,27 @@ function createPokeCard(pokemon) {
 }
 
 
-//----------------------SCROLL TO TOP BUTTON--------------//
 
-//Get the button:
+    ////// SCROLL TO TOP BUTTON ////////
+
 mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
-
+    
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
-
-// When the user clicks on the button, scroll to the top of the document
+    
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;               // For Safari
+    document.documentElement.scrollTop = 0;    // For Chrome, Firefox, IE and Opera
 }
 
 
 
+    ///// SEARCH BAR /////
 
-//-------------ADDED FROM ORIGINAL PROJECT---------------//
 
-const li = document.createElement("favorites-list")
-//^ <div> #id variables from HTML
-const randomPoke = document.getElementById("pokemon-randomize");
-const randomBox = document.getElementById("randomize-box");
-
-const favoritePoke = document.getElementById("pokemon-favorites");
-const favoriteBox = document.getElementById("favorites-box");
-    favoritesBox.append(li)
-
-const searchPoke = document.getElementById("pokemon-search")
-
-//^ eventListener for randomPoke
-        //^ CREATE ONE SUBMIT EVENT LISTENER FOR BOTH BUTTONS?
-randomPoke.addEventListener('submit', (event) => {
-     event.preventDefault();
-})
-
-//^ eventListener for favoritePoke
-favoritePoke.addEventListener('submit', (event) => {
-     event.preventDefault();
-})
-//^ eventListener for searchPoke
-searchPoke.addEventListener('click', () => {
-
-})
