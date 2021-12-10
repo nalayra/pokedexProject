@@ -31,6 +31,7 @@ const fetchAPokemon = async id => {
     const pokemon = await res.json();
     createPokeCard(pokemon);
 }
+
 fetchPokemons();
 
 function createPokeCard(pokemon) {
@@ -107,4 +108,23 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+//---------------------------SEARCH BAR-----------------------//
+
+const searchPokemon = async () => {
+    const searchForm = document.getElementById('searchForm')
+    const searchBar = document.getElementById('searchbar')
+    const name = searchBar.value;
+    
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            displayPopup(data)
+        })
+    })
 }
