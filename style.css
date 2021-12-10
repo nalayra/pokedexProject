@@ -136,13 +136,18 @@ html {
 
 /* -------SEARCH BAR--------- */
 
+#searchFrom {
+  align-content: center;
+}
+
 #searchbar {
   padding: 15px;
   border-radius: 10px;
   align-self: center;
-  margin-bottom: 3%;
-  margin-top: -5%;
-  width: 15%;
+  margin-bottom: 35%;
+  margin-left: -20%;
+  margin-top: -500%;
+  width: 125%;
 }
 
 input[type="text"] {
@@ -151,17 +156,43 @@ input[type="text"] {
   transition: width 0.15s ease-in-out;
 }
 
+/* -------POP UP POKEMON ON CLICK--------- */
+
 .popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: #f4f4f4;
-  opacity: 0.95;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  left: 50%;
+  width: 700px; /* adjust as per your needs */
+  height: 500px; /* adjust as per your needs */
+  margin-left: -400px; /* negative half of width above */
+  margin-top: -250px; /* negative half of height above */
+  background-color: rgb(123, 113, 249);
+  opacity: 0.93;
+  padding-left: 200px;
+  padding-right: -400px;
+  border-radius: 15px;
+}
+
+.popup img {
+  height: 350px;
+  width: 350px;
+  margin-left: 90px;
+}
+
+.popup h2 {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: black;
+  margin-left: 110px;
+  margin-top: -10px;
+  margin-bottom: 50px;
+}
+
+.popup p {
+  font-size: 18px;
+  font-weight: 500;
+  color: azure;
+  margin-left: 50px;
 }
 
 #closeBtn {
@@ -172,7 +203,7 @@ input[type="text"] {
 
 button {
   background-color: orangered;
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   color: white;
   border-radius: 3px;
