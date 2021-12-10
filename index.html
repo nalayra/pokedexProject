@@ -23,8 +23,10 @@
 	</div>
 
     <!------SEARCH BAR------>
-    <input id="searchbar" onkeyup="search_pokemons()" type="text"
-    name="search" placeholder="Search your favorite Pokemon...">
+	<form id ="searchForm">
+    	<input id="searchbar" onkeyup="searchPokemon()" type="text"
+    	name="search" placeholder="Search your favorite Pokemon...">
+	</form>
 
 	<!------ALL POKEMONS------>
 <div id="poke_container" class="poke_container"></div>
