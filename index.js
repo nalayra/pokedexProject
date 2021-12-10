@@ -1,102 +1,63 @@
 //API URL for list of all pokemon
 const URL = `https://pokeapi.co/api/v2/pokemon/`;
+
+//constants identifyers
+const mainForm = document.querySelector("#main-form")
+let mainImage = mainForm.querySelector("img")
+const pokemonName = mainForm.querySelector("h4")
+
+//constants references
 const pokedex = document.getElementById("pokedex");
-console.log(pokedex);
-
-
-//Function to fetch pokemon from PokeAPI
-// const fetchPokemon = () => {
-    
-    // for (let i = 1; i < 9; i++){
-    // fetch(`${URL}${i}`)
-    // .then(res => res.json())
-    // .then(data => {
-    //     const pokemon = {
-    //         name: data.name,
-    //         id: data.id,
-    //         image: data.sprites['front_default'],
-    //         type: data.types.map(type => type.type.name).join(', ')
-    //     };
-    //     displayPokemon(pokemon);
-    // });
-    // };
-
-// const displayPokemon = pokemon => {
-//     console.log(pokemon)
-//     const html = `<li>Bulbasaur</li>`;
-//     pokedex.innerHTML = html;
-
-// }
-
-// };
-// fetchPokemon();
-
-
-                //Current Code
+const promises = [];  //this creates 'promises' array
+  
+//big boy fetch
 const fetchPokemon = () => {
-    
-    const promises = [];
-    for (let i = 1; i < 9; i++){
+
+//gets URL for each pokemon and puts it in 'promises' array
+for (let i = 1; i < 9; i++){
     promises.push(fetch(`${URL}${i}`)
     .then(res => res.json()))
-    }
+}
 
-    Promise.all(promises).then(results => {
-        const pokemon = results.map( data =>({
-            name: data.name,
-            id: data.id,
-            image: data.sprites['front_default'],
-            type: data.types.map(type => type.type.name).join(', ')
-        }))
-        displayPokemon(pokemon);
-    })
-    };
+//adds in all of the info for each pokemon into 'promises' array
+Promise.all(promises).then(data => {
 
+    const pokemon = data.map( (result, index) => ({
+        name: result.name,
+        id: index + 1,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
+        apiURL: result.forms[0].url,
+        type: result.types.map(type => type.type.name).join(', ')
+    }))
+
+    console.log(data)
+    console.log(pokemon)
+    displayPokemon(pokemon);
+});
+};
+
+fetchPokemon();
 //! The li was referenced in the HTML file tag as a <ul>, so I made updates so I could style via CSS
 const displayPokemon = pokemon => {
-    console.log(pokemon)
-    const pokemonHTML = pokemon.map ( pokemon => `
-    <li class="card">
-        <img class="card-image" src="${pokemon.image}"/>
-        <h2 class="card-title" >${pokemon.id}. ${pokemon.name}</h2>
-        <p class="card-subtitle">Type: ${pokemon.type}</p>
+    const pokemonHTML = pokemon.map ( poke => `
+    <li class="card" onclick="selectPokemon(${poke.id})">
+        <img class="card-image" src="${poke.image}"/>
+        <h2 class="card-title" >${poke.id}. ${poke.name}</h2>
+        <p class="card-subtitle">Type: ${poke.type}</p>
     </li>
     `)
     .join('');
     pokedex.innerHTML = pokemonHTML;
-
 }
-fetchPokemon();
 
+const selectPokemon = async (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const res = await fetch (url);
+    const poke = await res.json();
+    updatePicture(poke);
+}
 
-
-const li = document.createElement("favorites-list")
-
-
-//^ <div> #id variables from HTML
-const randomPoke = document.getElementById("pokemon-randomize");
-const randomBox = document.getElementById("randomize-box");
-
-const favoritePoke = document.getElementById("pokemon-favorites");
-const favoriteBox = document.getElementById("favorites-box");
-    favoritesBox.append(li)
-
-const searchPoke = document.getElementById("pokemon-search")
-
-
-
-//^ eventListener for randomPoke
-        //^ CREATE ONE SUBMIT EVENT LISTENER FOR BOTH BUTTONS?
-randomPoke.addEventListener('submit', (event) => {
-     event.preventDefault();
-})
-
-//^ eventListener for favoritePoke
-favoritePoke.addEventListener('submit', (event) => {
-     event.preventDefault();
-})
-//^ eventListener for searchPoke
-searchPoke.addEventListener('click', () => {
-
-})
-
+//updates the main picture to the one you click on
+const updatePicture = (poke) => {
+    mainImage.src = poke.sprites['front_default']   
+}
