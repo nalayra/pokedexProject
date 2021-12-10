@@ -1,128 +1,54 @@
-div#pokemon-header {
-  position: relative;
-  text-align: center;
-}
-
-section {
-  height: 50vh;
-}
-
-.container-1 {
-  display: flex;
-  justify-content: center;
-  height: 200px;
-  align-items: center;
-  max-width: fit-content;
-  margin: auto;
-
-  grid-template-columns: 300px;
-  grid-template-rows: 200px 210px 80px;
-  grid-template-areas: 'pic' 'text' 'stats';
-  font-family: roboto;
-  border-radius: 15px;
-  background: url('https://www.pngmart.com/files/13/Pokemon-Card-PNG-Transparent.png');
-  background-size: contain;
-  width: 300px;
-  height: 300px;
-  box-shadow: 7px 7px 15px rgba(173, 177, 255, 0.94);
-  text-align: center;
-  width: 16vw;
-  height: 22vw;
-  display: grid;
-  align-self: center;
-  overflow: hidden;
-}
-
-.card-pic {
-  grid-area: pic;
-  display: flex;
-  align-items: center;
-  background: url('https://archives.bulbagarden.net/media/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png');
-  background-size: cover;
-  width: 150px;
-  height: 150px;
-  
-  
-}
-
-.card-text {
-  grid-area: text;
-  margin: 5px;
-}
-
-.card-text h2 {
-  color: orangered;
-  font-size: 10px;
-  font-weight: 100;
-}
-
-.card-text p {
-  color: white;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.card-stats {
-  grid-area: stats;
-}
-
 body {
-  background-color: black;
-  font-family: "M PLUS 1 Code", sans-serif;
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.pokeball-gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 50px;
+  max-block-size: 100px;
+  margin-inline-start: 600px;
 }
 
 h1 {
-  text-transform: uppercase;
-  padding-top: 20px;
-  text-align: center;
-  font-size: 50px;
+  margin-top: 70px;
+  margin-bottom: 100px;
   color: orangered;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-style: bolder;
+  text-transform: capitalize;
+  font-size: 70px;
+  text-shadow: 5px 5px 15px rgba(121, 105, 243, 0.94);
 }
 
-#pokedex {
-  padding-inline-start: 0;
+#poke_container {
+  grid-template-columns: repeat(5, 310px);
+  grid-template-rows: repeat(100px 80px 80px 80px);
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  grid-gap: 30px;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-.container {
-  padding: 60px;
-  margin: auto;
-}
-
-.card-image {
-  height: 250px;
-}
-
-.card-title {
-  font-size: 35px;
-  font-weight: bolder;
-  text-transform: capitalize;
-  margin-bottom: 0px;
-  color: springgreen;
-}
-
-.card-subtitle {
-  font-weight: bolder;
-  font-size: 30px;
-  color: white;
-  margin-top: 15px;
-  text-transform: capitalize;
-}
-
-.card {
-  list-style: none;
-  padding: 30px;
-  color: black;
+.pokemon {
+  border-radius: 20px;
+  margin: 20px;
   text-align: center;
-  background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+  justify-self: center;
 }
 
-.card:hover {
+.pokemon:hover {
   animation: bounce 0.5s linear;
+  cursor: pointer;
 }
 
 @keyframes bounce {
@@ -140,33 +66,121 @@ h1 {
   }
 }
 
-.pokeball-gif {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
-  max-block-size: 100px;
-  margin-inline-start: 600px;
+.pokemon .img-container {
+  background: url("https://www.pngmart.com/files/13/Pokemon-Card-PNG-Transparent.png");
+  background-size: cover;
+  border-radius: 5%;
+  height: 360px;
+  width: 260px;
 }
 
-#pokemon-header input[class="favorites"] {
-  position: relative;
-  float: right;
-  top: -140px;
-  font-size: 28px;
-  padding: 40px 30px;
+.pokemon .img-container img {
+  max-width: 80%;
+  height: 200px;
+  width: 220px;
 }
 
-#pokemon-header input[class="randomize"] {
-  position: relative;
-  float: left;
-  top: -140px;
-  font-size: 28px;
-  padding: 40px 30px;
+.pokemon .info {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(253, 245, 230);
+  letter-spacing: 1px;
 }
 
-#pokemon-header input[class="search"] {
-  position: static;
-  top: -35px;
-  width: 550px;
+.pokemon .number {
+  background-color: white;
+  border-radius: 5px;
+  font-size: 0.8em;
+  margin-bottom: 30px;
+  color: midnightblue;
+}
+
+.pokemon .name {
+  letter-spacing: 1px;
+  color: rgb(240, 221, 48);
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+/* -------SCROLL TO TOP BUTTON--------- */
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 30px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 25px; /* Increase font size */
+  font-weight: 400;
+}
+
+#myBtn:hover {
+  background-color: rgb(
+    240,
+    105,
+    183
+  ); /* Add a dark-grey background on hover */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* -------SEARCH BAR--------- */
+
+#searchbar {
+  padding: 15px;
+  border-radius: 10px;
+  align-self: center;
+  margin-bottom: 3%;
+  margin-top: -5%;
+  width: 15%;
+}
+
+input[type="text"] {
+  width: 30%;
+  -webkit-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #f4f4f4;
+  opacity: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+button {
+  background-color: orangered;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  transition: transform 100ms;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0px 1px 2px darkred;
 }
