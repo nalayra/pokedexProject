@@ -116,9 +116,9 @@ h1 {
 	background-color: red; /* Set a background color */
 	color: white; /* Text color */
 	cursor: pointer; /* Add a mouse pointer on hover */
-	padding: 20px; /* Some padding */
+	padding: 15px; /* Some padding */
 	border-radius: 10px; /* Rounded corners */
-	font-size: 33px; /* Increase font size */
+	font-size: 25px; /* Increase font size */
 	font-weight: 400;
 }
   
@@ -126,36 +126,24 @@ h1 {
 	background-color: rgb(240, 105, 183); /* Add a dark-grey background on hover */
 }
 
-
-
-/* -------ADDED FROM ORIGINAL PROJECT--------- */
-
-div#pokemon-header {
-	position: relative;
-	text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
 
-#pokemon-header input[class="favorites"] {
-	position: relative;
-	float: right;
-	top: -140px;
-	font-size: 28px;
-	padding: 40px 30px;
+/* -------SEARCH BAR--------- */
+
+#searchbar{
+  padding:15px;
+  border-radius: 10px;
+  align-self: center;
+  margin-bottom: 3%;
+  margin-top: -5%;
+  width: 15%;
 }
 
-
-#pokemon-header input[class="randomize"] {
-	position: relative;
-	float: left;
-	top: -140px;
-	font-size: 28px;
-	padding: 40px 30px;
-}
-  
-
-#pokemon-header input[class="search"] {
-	position: static;
-	top: -35px;
-	width: 550px;
+input[type=text] {
+   width: 30%;
+   -webkit-transition: width 0.15s ease-in-out;
+   transition: width 0.15s ease-in-out;
 }
