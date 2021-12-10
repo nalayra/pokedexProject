@@ -136,13 +136,18 @@ html {
 
 /* -------SEARCH BAR--------- */
 
+#searchFrom {
+  align-content: center;
+}
+
 #searchbar {
   padding: 15px;
   border-radius: 10px;
   align-self: center;
-  margin-bottom: 3%;
-  margin-top: -5%;
-  width: 15%;
+  margin-bottom: 35%;
+  margin-left: -20%;
+  margin-top: -500%;
+  width: 125%;
 }
 
 input[type="text"] {
