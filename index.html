@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id='top'>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,39 +9,27 @@
 	<script defer src="index.js"></script>
 </head>
 <body>
+    <!------SMOOTH SCROLL------>
+    <a href="#top"></a>
+
+    <!------POKEBALL GIF TOP OF PAGE------>
 	<div class="pokeball-gif">
         <img src="https://media.giphy.com/media/DJM88aCmEeaNG/giphy.gif">
     </div>
-	<div>
+
+    <!------WELCOME TITLE------>
+	<div class='page-title'>
 		<h1>Pokedex</h1>
 	</div>
-<div id="poke_container" class="poke_container"></div>
 
-<!-- randomize button -->
-<div id="pokemon-header"> 
-	<form id="pokemon-events" action="#" method="POST"></form>
-		<input class="randomize" type="submit" value="Randomize">
-		<input class="search" type="text" name="pokemon-search" placeholder="Search Pokemon">
-		<input class="favorites" type="submit" value="Favorites">
-	</form>
-</div>
+    <!------SEARCH BAR------>
+    <input id="searchbar" onkeyup="search_pokemons()" type="text"
+    name="search" placeholder="Search your favorite Pokemon...">
 
-<div class="container" id="container"></div>
-<!-- randomize box information holder -->
-<!-- RESET VIA JAVASCRIPT -->
-<div id="randomize-list">
-	<ul id="random"></ul>
-</div>
-<!-- favorites box information holder -->
-<!-- populate list, RESET VIA JAVASCRIPT -->
-<div id="favorites-box">
-	<ul id="favorite"></ul>
-</div>
+    <!------ALL POKEMONS------>
+    <div id="poke_container" class="poke_container"></div>
 
-
-<!------SCROLL TO TOP BUTTON------>
-<button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+    <!------SCROLL TO TOP BUTTON------>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
 </body>
 </html>
-
-
